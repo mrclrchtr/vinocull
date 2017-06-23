@@ -1,0 +1,17 @@
+image: node:latest
+before_script:
+  - apt-get install python
+  - npm -v
+  - npm install -g angular-cli node-gyp
+cache:
+  paths:
+  - node_modules/
+pages:
+  script:
+   - npm install --unsafe-perm
+   - ng build -prod
+  artifacts:
+    paths:
+    - public
+  only:
+  - master

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Bootstrap Example Template</title>
+    <meta charset="utf-8">
+    <!-- Viewport Meta Tag -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  </head>
+  <body class="vc-bg">
+    <div class="container">
+      <div class="row">
+        <div class="col col-sm-12 col-md-12 text-center">
+          <h1 class="vc-font-h1">{{questions.get(index)}}</h1>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col col-12 col-md-4 text-center mb-3" *ngFor="let answer of answers.get(index) | mapValues;">
+          <button type="button" class="btn btn-lg btn-primary vc-button vc-font-button"
+                  (click)="select(index, answer.key)">{{answer.val}}
+          </button>
+        </div>
+      </div>
+      <div class="row mt-5">
+        <div class="col col-md-12 text-center">
+          <button type="button" class="btn btn-lg btn-primary" [hidden]="index == 0" (click)="back()">Zurück zur
+            vorherigen Frage
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
+
