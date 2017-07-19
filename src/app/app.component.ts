@@ -13,9 +13,9 @@ export class AppComponent implements OnInit {
   index = 0;
 
   questions: Map<number, string> = new Map([
-    [1, 'Welche Weinfarbe ist dein Favorit?'],
-    [2, 'Welchen Geschmack bevorzugst du?'],
-    [3, 'Wie süß magst du deinen Wein?']
+    [0, 'Welche Weinfarbe ist dein Favorit?'],
+    [1, 'Welchen Geschmack bevorzugst du?'],
+    [2, 'Wie süß magst du deinen Wein?']
   ]);
 
 
