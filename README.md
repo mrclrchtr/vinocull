@@ -1,7 +1,7 @@
 # Vinocull
 
-It´s a small tool for the website ["Wein für Laien"](http://wein-fuer-laien.de/) to find the perfect Wine.
-You can see the result here:  
+It´s a small tool for the website ["Wein für Laien"](http://wein-fuer-laien.de/) to find the perfect Wine.  
+You can see the result here: http://wein-fuer-laien.de/vinocull
 
 ## Development server
 

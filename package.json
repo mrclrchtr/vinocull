@@ -1,7 +1,12 @@
 {
   "name": "vinocull",
-  "version": "1.0.1",
+  "author": "Marcel Richter",
+  "version": "1.1.0",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mrclrchtr/vinocull/issues"
+  },
+  "homepage": "https://github.com/mrclrchtr/vinocull",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -11,7 +16,7 @@
     "lint": "ng lint --type-check",
     "e2e": "ng e2e"
   },
-  "private": true,
+  "private": false,
   "dependencies": {
     "@angular/animations": "^4.0.0",
     "@angular/common": "^4.0.0",
