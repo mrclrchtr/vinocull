@@ -6,6 +6,7 @@ import {Logger} from 'angular2-logger/core';
 import {AppComponent} from './app.component';
 import {MapValuesPipe} from './util/map-values.pipe';
 import {environment} from '../environments/environment';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -13,9 +14,9 @@ import {environment} from '../environments/environment';
     MapValuesPipe
   ],
   imports: [
-    BrowserModule
+    BrowserModule, HttpClientModule
   ],
-  providers: [Logger],
+  providers: [Logger, HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule {

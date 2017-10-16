@@ -1,6 +1,7 @@
 # Vinocull
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.3.
+It´s a small tool for the website ["Wein für Laien"](http://wein-fuer-laien.de/) to find the perfect Wine.
+You can see the result here:  
 
 ## Development server
 
