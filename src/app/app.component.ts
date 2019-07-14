@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {Logger} from 'angular2-logger/core';
 import {HttpClient} from '@angular/common/http';
 
 @Component({
@@ -10,7 +9,6 @@ import {HttpClient} from '@angular/common/http';
 export class AppComponent implements OnInit {
   csv = 'assets/sites.csv';
 
-  logger: Logger;
   httpClient: HttpClient;
 
   index = 0;
@@ -33,38 +31,37 @@ export class AppComponent implements OnInit {
 
   selection: Map<number, number> = new Map();
 
-  constructor(private _logger: Logger, private _httpClient: HttpClient) {
-    this.logger = _logger;
+  constructor(private _httpClient: HttpClient) {
     this.httpClient = _httpClient;
   }
 
   select(index: number, currentSelection: number) {
-    this.logger.info('Selection: ' + currentSelection);
+    console.log('Selection: ' + currentSelection);
     this.selection.set(index, currentSelection);
     if (index < (this.questions.size) - 1) {
-      this.logger.info('Next question');
+      console.log('Next question');
       this.index++;
     } else {
-      this.logger.info('Result: ');
+      console.log('Result: ');
       this.selection.forEach((value, key) => {
-        this.logger.info(key, value);
+        console.log(key, value);
       });
 
       const resultString: string = '' + this.selection.get(0) + this.selection.get(1) + this.selection.get(2);
-      this.logger.info('Result:' + resultString);
-      this.logger.info('Redirect to:' + this.possibleResults.get(resultString));
+      console.log('Result:' + resultString);
+      console.log('Redirect to:' + this.possibleResults.get(resultString));
 
       window.top.location.href = this.possibleResults.get(resultString);
     }
   }
 
   back() {
-    this.logger.info('Back');
+    console.log('Back');
     this.index--;
   }
 
   public ngOnInit() {
-    this.logger.debug('Initialized AppComponent');
+    console.log('Initialized AppComponent');
     this.httpClient.get(this.csv, {responseType: 'text'}).subscribe(csv => {
       console.log(csv);
       this.possibleResults = this.csvToMap(csv);
